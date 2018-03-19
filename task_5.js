@@ -10,19 +10,16 @@ function askArrLenght() {
     for (var i = 0; i < answer; i++) {
       arr.push(Math.floor(Math.random() * (10 - 1 + 1)) + 1);
     }
-    console.log(arr);
+    console.log("Исходный массив " + arr);
 
-
-    (function () {
-      let len = (arr.length - 1) / 2;
-      for (var i = 0; i < len; ++i) {
-        arr.push(arr[0]);
-        arr.splice(0, 1);
-      }
-      arr.splice(len + 1, 0, arr[0]);
+    let len = (arr.length - 1) / 2;
+    for (var i = 0; i < len; ++i) {
+      arr.push(arr[0]);
       arr.splice(0, 1);
-      console.log(arr);
-    })();
+    }
+    arr.splice(len + 1, 0, arr[0]);
+    arr.splice(0, 1);
+    console.log("Измененный массив " + arr);
     askAnother();
   });
 }
