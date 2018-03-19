@@ -4,7 +4,7 @@ const readline = require('readline');
 
 function askArrLenght() {
   const rl = prompt();
-  rl.question('Длинна массива ', (answer) => {
+  rl.question('Длинна массива(нечетное число) ', (answer) => {
     rl.close();
     let arr = [];
     for (var i = 0; i < answer; i++) {
