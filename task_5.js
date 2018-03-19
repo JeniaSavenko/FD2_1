@@ -40,7 +40,10 @@ function askAnother() {
 }
 
 function prompt() {
-  return readline.createInterface({ input: process.stdin,  output: process.stdout});
+  return readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
 }
 
- askArrLenght();
+askArrLenght();
