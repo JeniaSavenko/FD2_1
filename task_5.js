@@ -4,7 +4,7 @@ const readline = require('readline');
 
 function askArrLenght() {
   const rl = prompt();
-  rl.question('Длинна массива(нечетное число) ', (answer) => {
+  rl.question('Длинна массива', (answer) => {
     rl.close();
     let arr = [];
     for (var i = 0; i < answer; i++) {
@@ -12,13 +12,12 @@ function askArrLenght() {
     }
     console.log("Исходный массив " + arr);
 
-    let len = (arr.length - 1) / 2;
-    for (var i = 0; i < len; ++i) {
-      arr.push(arr[0]);
-      arr.splice(0, 1);
+    for (let i = 0, even = arr.length % 2, n = Math.floor(arr.length / 2); i < n; i++) {
+      const temp = arr[i];
+      const index = n + i + even;
+      arr[i] = arr[index];
+      arr[index] = temp;
     }
-    arr.splice(len + 1, 0, arr[0]);
-    arr.splice(0, 1);
     console.log("Измененный массив " + arr);
     askAnother();
   });
