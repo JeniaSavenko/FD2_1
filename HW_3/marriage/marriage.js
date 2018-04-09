@@ -49,7 +49,7 @@ class Woman extends Person{
       this.partner = person;
       this.partner.marriage(this);
     }else {
-      console.log("pidari");
+      console.log("lesbuhi");
     }
   }
 
